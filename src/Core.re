@@ -170,14 +170,14 @@ module QueryFilter = {
 
 module QueryWhere = {
   type t = queryWhere;
-  [@bs.send] external beginsWith : (t, Js.Json.t) => query = "";
-  [@bs.send] external between : (t, Js.Json.t) => query = "";
-  [@bs.send] external eq : (t, Js.Json.t) => query = "";
-  [@bs.send] external equals : (t, Js.Json.t) => query = "";
-  [@bs.send] external gt : (t, Js.Json.t) => query = "";
-  [@bs.send] external gte : (t, Js.Json.t) => query = "";
-  [@bs.send] external lt : (t, Js.Json.t) => query = "";
-  [@bs.send] external lte : (t, Js.Json.t) => query = "";
+  [@bs.send.pipe: t] external beginsWith : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external between : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external eq : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external equals : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external gt : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external gte : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external lt : Js.Json.t => query = "";
+  [@bs.send.pipe: t] external lte : Js.Json.t => query = "";
 };
 
 type scan;
@@ -216,20 +216,20 @@ module Scan = {
 
 module ScanWhere = {
   type t = scanWhere;
-  [@bs.send] external beginsWith : (t, Js.Json.t) => scan = "";
-  [@bs.send] external between : (t, Js.Json.t) => scan = "";
-  [@bs.send] external contains : (t, Js.Json.t) => scan = "";
-  [@bs.send] external eq : (t, Js.Json.t) => scan = "";
-  [@bs.send] external equals : (t, Js.Json.t) => scan = "";
-  [@bs.send] external gt : (t, Js.Json.t) => scan = "";
-  [@bs.send] external gte : (t, Js.Json.t) => scan = "";
-  [@bs.send] external in_ : (t, Js.Json.t) => scan = "in";
-  [@bs.send] external lt : (t, Js.Json.t) => scan = "";
-  [@bs.send] external lte : (t, Js.Json.t) => scan = "";
-  [@bs.send] external ne : (t, Js.Json.t) => scan = "";
-  [@bs.send] external notContains : (t, Js.Json.t) => scan = "";
-  [@bs.send] external notNull : (t, Js.Json.t) => scan = "";
-  [@bs.send] external null : (t, Js.Json.t) => scan = "";
+  [@bs.send.pipe: t] external beginsWith : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external between : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external contains : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external eq : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external equals : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external gt : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external gte : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external in_ : Js.Json.t => scan = "in";
+  [@bs.send.pipe: t] external lt : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external lte : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external ne : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external notContains : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external notNull : Js.Json.t => scan = "";
+  [@bs.send.pipe: t] external null : Js.Json.t => scan = "";
 };
 
 module Model = {
