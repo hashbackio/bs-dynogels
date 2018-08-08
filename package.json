@@ -25,7 +25,7 @@
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world"
   },
-  "version": "0.2.0",
+  "version": "1.0.0",
   "peerDependencies": {
     "aws-sdk": "^2.213.1",
     "dynogels": "^9.0.0"
