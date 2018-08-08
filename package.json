@@ -30,7 +30,5 @@
     "aws-sdk": "^2.213.1",
     "dynogels": "^9.0.0"
   },
-  "dependencies": {
-    "@glennsl/bs-json": "^1.2.0"
-  }
+  "dependencies": {}
 }
