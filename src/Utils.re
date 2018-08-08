@@ -1,5 +1,5 @@
 let dynamoRequestToPromise = dynogelsRequest =>
-  Js.Result.(
+  Belt.Result.(
     Js.Promise.make((~resolve, ~reject as _) =>
       dynogelsRequest((maybeExn, maybeItem) =>
         (

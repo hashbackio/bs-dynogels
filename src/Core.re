@@ -8,8 +8,7 @@ module Options = {
 
 module StreamSpecification = {
   type t;
-  [@bs.set]
-  external setStreamEnabled : (t, Js.boolean) => unit = "streamEnabled";
+  [@bs.set] external setStreamEnabled : (t, bool) => unit = "streamEnabled";
   [@bs.get] external getStreamEnabled : t => bool = "streamEnabled";
   [@bs.set]
   external setStreamViewType : (t, string) => unit = "streamViewType";
@@ -122,7 +121,7 @@ module Query = {
   [@bs.send.pipe: t] external attributes : array(string) => t = "";
   [@bs.send.pipe: t] external buildKey : unit => string = "";
   [@bs.send.pipe: t] external buildRequest : unit => Js.Json.t = "";
-  [@bs.send.pipe: t] external consistentRead : Js.boolean => t = "";
+  [@bs.send.pipe: t] external consistentRead : bool => t = "";
   [@bs.send.pipe: t] external descending : unit => t = "";
   [@bs.send.pipe: t]
   external exec : callback(PaginatedRequest.t) => unit = "";
@@ -409,8 +408,7 @@ module SchemaConfig = {
   } |}
   ];
   [@bs.set] external setCreatedAt : (t, string) => unit = "createdAt";
-  [@bs.set]
-  external setCreatedAtBoolVal : (t, Js.boolean) => unit = "createdAt";
+  [@bs.set] external setCreatedAtBoolVal : (t, bool) => unit = "createdAt";
   [@bs.set]
   external setHashKey : (t, Js.Nullable.t(string)) => unit = "hashKey";
   [@bs.get] external getHashKey : t => Js.Nullable.t(string) = "hashKey";
@@ -426,18 +424,15 @@ module SchemaConfig = {
   external setTableName : (t, Js.Nullable.t(string)) => unit = "tableName";
   [@bs.get] external getTableName : t => Js.Nullable.t(string) = "tableName";
   [@bs.set] external setUpdatedAt : (t, string) => unit = "updatedAt";
-  [@bs.set]
-  external setUpdatedAtBoolVal : (t, Js.boolean) => unit = "updatedAt";
+  [@bs.set] external setUpdatedAtBoolVal : (t, bool) => unit = "updatedAt";
   /*
    NOTE: If timestamps is set to true then Joi validation will kick in and you'll
    probably see things starting to break since there is no way to add Joi
    validation to the schema through this package right now.
    */
   [@bs.set]
-  external setTimestamps : (t, Js.Nullable.t(Js.boolean)) => unit =
-    "timestamps";
-  [@bs.get]
-  external getTimestamps : t => Js.Nullable.t(Js.boolean) = "timestamps";
+  external setTimestamps : (t, Js.Nullable.t(bool)) => unit = "timestamps";
+  [@bs.get] external getTimestamps : t => Js.Nullable.t(bool) = "timestamps";
 };
 
 type documentClient;
